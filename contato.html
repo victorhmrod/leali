@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato — LEALI Cosméticos</title>
+<meta name="description" content="Fale com a LEALI Cosméticos: tire dúvidas sobre produtos, linhas e pedidos.">
+<meta name="theme-color" content="#40263D">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LEALI Cosméticos">
+<meta property="og:title" content="Contato — LEALI Cosméticos">
+<meta property="og:description" content="Fale com a LEALI Cosméticos: tire dúvidas sobre produtos, linhas e pedidos.">
+<meta property="og:image" content="https://victorhmrod.github.io/leali/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contato">
+<div id="site-header"></div>
+<main id="conteudo">
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Você está em"><a href="index.html">Início</a><span>/</span><span>Contato</span></nav>
+    <h1 class="display">Vamos conversar.</h1>
+    <p class="lead">Dúvidas sobre produtos, linhas ou pedidos? Escreva para a equipe LEALI.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(24px,4vw,48px)">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Atendimento</span>
+      <h2 class="h2" style="margin-top:16px">Consistência em cada contato.</h2>
+      <dl class="info-list">
+        <div><dt>E-mail</dt><dd><a data-email href="#"></a></dd></div>
+        <div><dt>Resposta</dt><dd>Retornamos por e-mail, com clareza e sem promessas vagas.</dd></div>
+      </dl>
+    </div>
+    <form class="form-card reveal" id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="field"><label for="c-nome">Nome</label><input class="input" id="c-nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="c-email">E-mail</label><input class="input" id="c-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="c-tel">Telefone (opcional)</label><input class="input" id="c-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="c-assunto">Assunto</label>
+          <select class="select" id="c-assunto" name="assunto"><option>Dúvida sobre produtos</option><option>Pedidos</option><option>Parcerias</option><option>Outro assunto</option></select></div>
+      </div>
+      <div class="field"><label for="c-msg">Mensagem</label><textarea class="textarea" id="c-msg" name="msg" required placeholder="Como podemos ajudar?"></textarea></div>
+      <button class="btn btn--primary" type="submit">Enviar mensagem</button>
+      <p class="form-note" style="margin:0">Ao enviar, abrimos seu e-mail com a mensagem preenchida para você confirmar o envio.</p>
+      <p class="form-ok" id="contact-ok" role="status">Pronto! Confira o seu aplicativo de e-mail para finalizar o envio. Obrigada pelo contato.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section section--marfim" id="duvidas">
+  <div class="container split split--top">
+    <div class="reveal">
+      <span class="eyebrow">Dúvidas frequentes</span>
+      <h2 class="h2" style="margin-top:16px">O essencial, sem rodeios.</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Como escolho a linha ideal?</summary><p>A LEALI tem cinco universos: Color (maquiagem), Skin (cuidados faciais), Body (corpo), Scent (perfumaria) e Hair (cabelos). Comece pela necessidade da sua rotina e explore a linha correspondente em Coleções.</p></details>
+      <details><summary>Os produtos têm alegações clínicas?</summary><p>Alegações como “hipoalergênico” ou “dermatologicamente testado” só são utilizadas quando a formulação e a documentação do produto permitem. Sempre que houver dúvida, fale com a nossa equipe.</p></details>
+      <details><summary>Posso testar um produto novo com segurança?</summary><p>Como boa prática com qualquer cosmético, experimente primeiro em uma pequena área da pele e interrompa o uso em caso de desconforto. Leia sempre o rótulo e as instruções de uso.</p></details>
+      <details><summary>Como faço um pedido?</summary><p>Monte sua sacola nas Coleções e envie o pedido: abrimos seu e-mail com o resumo para a equipe LEALI confirmar disponibilidade, pagamento e entrega.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

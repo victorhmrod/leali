@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coleções — LEALI Cosméticos</title>
+<meta name="description" content="Conheça as cinco linhas LEALI: Color, Skin, Body, Scent e Hair. Maquiagem, cuidados faciais, corporais, perfumaria e cabelos.">
+<meta name="theme-color" content="#40263D">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LEALI Cosméticos">
+<meta property="og:title" content="Coleções — LEALI Cosméticos">
+<meta property="og:description" content="Conheça as cinco linhas LEALI: Color, Skin, Body, Scent e Hair. Maquiagem, cuidados faciais, corporais, perfumaria e cabelos.">
+<meta property="og:image" content="https://victorhmrod.github.io/leali/assets/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="colecoes">
+<div id="site-header"></div>
+<main id="conteudo">
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="crumbs" aria-label="Você está em"><a href="index.html">Início</a><span>/</span><span>Coleções</span></nav>
+    <h1 class="display">Uma marca. Cinco universos.</h1>
+    <p class="lead">Escolha por categoria. A cor organiza, a LEALI assina.</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="shop-top">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por linha"></div>
+      <div class="sort"><span id="count" aria-live="polite"></span><label for="sort" class="sr-only">Ordenar por</label>
+        <select class="select" id="sort"><option value="rel">Em destaque</option><option value="asc">Menor preço</option><option value="desc">Maior preço</option><option value="az">Nome (A–Z)</option></select>
+      </div>
+    </div>
+    <div class="line-banner" id="line-banner" hidden></div>
+    <div class="product-grid product-grid--3" id="shop-grid" style="margin-top:28px"></div>
+    <p class="demo-note">Catálogo ilustrativo: produtos, frascos, volumes, composição e preços são exemplos de apresentação e dependem de fornecedores e regularização. Alegações como “hipoalergênico” ou “dermatologicamente testado” só devem ser utilizadas quando a formulação e a documentação permitirem.</p>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
