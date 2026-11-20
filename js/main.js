@@ -189,7 +189,7 @@
     bodyEl.innerHTML = cart.map((i) => {
       const p = byId[i.id], L = LINES[p.linha];
       return `<div class="cart-item" data-id="${p.id}">
-        <div class="cart-thumb" style="--t:${L.tint}">${packSVG(p)}</div>
+        <div class="cart-thumb" style="--t:${p.tint || L.tint}">${packSVG(p)}</div>
         <div><div class="ci-name">${esc(p.nome)}</div><div class="ci-meta">LEALI ${L.nome} · ${esc(p.volume)}</div>
           <div class="qty qty--sm" role="group" aria-label="Quantidade de ${esc(p.nome)}"><button type="button" data-act="dec" aria-label="Diminuir">−</button><output>${i.qty}</output><button type="button" data-act="inc" aria-label="Aumentar">+</button></div><br>
           <button class="ci-remove" type="button" data-act="rm">Remover</button></div>
@@ -214,7 +214,7 @@
   function cardHTML(p) {
     const L = LINES[p.linha];
     return `<article class="card reveal" data-id="${p.id}">
-      <button class="card-visual" type="button" data-open="${p.id}" style="--t:${L.tint}" aria-label="Ver detalhes de ${esc(p.nome)}">${packSVG(p)}<span class="card-tag">${L.nome}</span></button>
+      <button class="card-visual" type="button" data-open="${p.id}" style="--t:${p.tint || L.tint}" aria-label="Ver detalhes de ${esc(p.nome)}">${packSVG(p)}<span class="card-tag">${L.nome}</span></button>
       <div class="card-body">
         <button class="card-title" type="button" data-open="${p.id}">${esc(p.nome)}</button>
         <div class="card-meta">${esc(p.funcao)} · ${esc(p.volume)}</div>
@@ -223,18 +223,27 @@
       </div></article>`;
   }
 
+  function moreHTML(m) {
+    const row = (k, v) => `<dt>${k}</dt><dd>${esc(v)}</dd>`;
+    return `<dl class="pd-more">${m.fragrancia ? row("Fragrância", m.fragrancia) : ""}` +
+      (m.piramide || []).map(([k, v]) => row("Notas de " + k.toLowerCase(), v)).join("") +
+      (m.uso ? row("Modo de uso", m.uso) : "") + (m.precaucoes ? row("Precauções", m.precaucoes) : "") +
+      (m.composicao ? row("Composição", m.composicao) : "") + `</dl>`;
+  }
+
   const pd = document.createElement("dialog"); pd.setAttribute("aria-label", "Detalhes do produto"); document.body.appendChild(pd);
   function openProduct(id) {
     const p = byId[id]; if (!p) return; const L = LINES[p.linha]; let qty = 1;
     pd.innerHTML = `<div class="pd">
       <button class="icon-btn pd-close" type="button" aria-label="Fechar">${ICON_X}</button>
-      <div class="pd-visual" style="--t:${L.tint}">${packSVG(p)}</div>
+      <div class="pd-visual" style="--t:${p.tint || L.tint}">${packSVG(p)}</div>
       <div class="pd-info">
         <span class="eyebrow">LEALI ${L.nome} · ${esc(L.categoria)}</span>
         <h3>${esc(p.nome)}</h3>
         <p class="lead" style="font-size:1rem">${esc(p.desc)}</p>
         <ul class="pd-list">${p.notas.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>
         <div class="card-meta">${esc(p.funcao)} · ${esc(p.volume)}</div>
+        ${p.mais ? moreHTML(p.mais) : ""}
         <div class="pd-buy">
           <div class="pd-price">${money(p.preco)}</div>
           <div class="pd-row">

@@ -426,3 +426,12 @@ dialog::backdrop { background: rgba(53, 37, 30, .55); }
 body.no-scroll { overflow: hidden; }
 [hidden] { display: none !important; }
 section[id] { scroll-margin-top: var(--header-h); }
+
+/* Produto com foto real */
+.card-visual img, .pd-visual img, .cart-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.card-visual { overflow: hidden; }
+.card-visual img { position: absolute; inset: 0; box-sizing: border-box; object-fit: cover; }
+.pd-visual img { object-fit: cover; }
+.pd-more { margin: 14px 0 4px; font-size: .8rem; line-height: 1.5; color: var(--texto-suave); display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; }
+.pd-more dt { font-weight: 700; color: var(--ameixa, #40263D); }
+.pd-more dd { margin: 0; }

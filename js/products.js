@@ -52,6 +52,17 @@
     { id: "scent-edp", linha: "scent", nome: "Eau de Parfum", tipo: "perfume", tom: "#CF947C", funcao: "Perfume", volume: "50 ml", preco: 189.9, destaque: true,
       desc: "Uma presença que permanece, sem exageros.",
       notas: ["Fragrância sofisticada e envolvente", "Fixação para o dia todo", "Frasco com tampa em cobre rosado"] },
+    { id: "scent-hydramist", linha: "scent", nome: "Hydra Mist", tipo: "perfume", tom: "#B4A3BD", funcao: "Body mist hidratante", volume: "100 ml", preco: 69.9, destaque: true,
+      img: "assets/produtos/hydra-mist.webp", tint: "#E1D6EE",
+      desc: "Perfume hidratante corporal com Aloe Vera e Pantenol: fragrância delicada e sensação de pele fresca, hidratada e perfumada ao longo do dia.",
+      notas: ["Hidrata a pele, sem ressecar", "Com Aloe Vera & Pantenol", "Spray fino e leve, para uso diário", "Vegano e não testado em animais"],
+      mais: {
+        fragrancia: "Floral frutado suave · doce leve · fresco e delicado",
+        piramide: [["Topo", "Bergamota, chá branco, pêra"], ["Corpo", "Aloe Vera, lavanda, flor de lírio"], ["Fundo", "Baunilha, musk, sândalo"]],
+        uso: "Borrife sobre o corpo sempre que desejar.",
+        precaucoes: "Uso externo. Manter fora do alcance de crianças. Evitar contato com os olhos. Em caso de irritação, suspender o uso.",
+        composicao: "Alcohol, Aqua, Parfum, Aloe Barbadensis Leaf Juice, Panthenol, Polysorbate 20, Glycerin, Phenoxyethanol, Ethylhexylglycerin, Citric Acid, Linalool, Limonene, Coumarin."
+      } },
     { id: "scent-mist", linha: "scent", nome: "Body Mist", tipo: "perfume", tom: "#B4A3BD", funcao: "Body mist", volume: "200 ml", preco: 79.9,
       desc: "Leveza perfumada para usar quando quiser.",
       notas: ["Borrife após o banho", "Perfume leve", "Frasco de 200 ml"] },
@@ -78,6 +89,7 @@
   const body = (x, y, w, h, r) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${IV}" stroke="${STROKE}" stroke-width="1.5"/>`;
 
   function packSVG(p) {
+    if (p.img) return `<img src="${p.img}" alt="${p.nome} — ${p.funcao}, ${p.volume}" loading="lazy">`;
     const L = LINES[p.linha], tom = p.tom, name = L.nome.toUpperCase();
     let g = "";
     switch (p.tipo) {
